@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
             $table->string('path');
+            // imageable_id column will contain the ID value of the product or staff
             $table->integer('imageable_id');
-            $table->integer('imageable_type');
+            //column will contain the class name of the parent model
+            $table->string('imageable_type');
             $table->timestamps();
         });
     }
